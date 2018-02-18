@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hangman-Game</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col col-12">
+                <h1 class="text-center">HangMan!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2" id="test">hi</div>
+            <div class="col-8">
+               <p> Main-Content</p>
+                    <div class= "row">
+                        <div class="col col-12">
+                            <p class="text-center" id="guess-word">_ _ _</p>
+                            <p class="text-center" id="wrong-guess">Guessed Letters</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-6">
+                                <h2 id="wins">Wins:0</h2>
+                                <h2 id"loses">Loses:0</h2>
+                        </div>
+                        <div class="col col-6">
+                            <h3>Attempts left:</h3>
+                            <p id ="attemptCounter">10</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="col-2">hello</div>
+        </div>
+    </div>
+    <script src="assets/javascript/game.js">
+    </script>
+</body>
+</html>
