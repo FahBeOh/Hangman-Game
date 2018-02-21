@@ -1,49 +1,57 @@
-// Array/Database for hangman words
-var names = ["leslie", "ron", "ben", "april", "andy", "tom", "ann", "chris", "jerry", "donna", "craig"];
 
-// Variable use to "grab" HTML element guess-word for purpose of "printing" random generated name//
-var guessName = document.getElementById("guess-word");
+var colors = ["red", "blue", "green", "white", "yellow", "black", "purple", "orange"];
 
-// Variable use to "grab" HTML element wrong-guess for purpose of "printing" wrong guessed letters//
-var wrongGuess = document.getElementById("wrong-guess");
+var wordSelector = colors[Math.floor(Math.random()*colors.length)];
+console.log(wordSelector);
 
-// Variable that takes "names" array and picks random item from the array//
-var word = names[Math.floor(Math.random()*names.length)];
-console.log(word)
+var remainingLtrs = wordSelector.length;
 
-//Empty array for the purpose of being filled with blank spaces "_"
-var blank = [];
 
-var wrongAnswers = [];
+var goodGuess = document.getElementById("goodGuess");
 
-var attempts = 10;
+var badGuess = document.getElementById("badGuess");
 
-// Variable that keeps track of the length/letters of the randomly picked word from the "names" array
-var remainingLetters = word.length;
+var attempts = document.getElementById("attempts");
 
-// Loop that adds blank spaces to the "blank" array according to the number of characters in the randomly chosen word from the "names" array
+var wins = document.getElementById("wins");
 
-for (var i = 0; i < word.length; i++){
-    blank[i] = "_";
+var loses = document.getElementById("loses");
+
+
+
+
+var blankSpc = [];
+
+var wrongGuess = [];
+
+
+for (var i = 0; i < wordSelector.length; i++){
+    blankSpc[i] = "_";
+    console.log(blankSpc);
 }
 
+goodGuess.innerHTML = blankSpc.join(" ");
 
-// Prints the "blanks" array to "guess-word" div and gets rid of the commas in the array and replaces them with spaces
-guessName.innerHTML = blank.join(" ");
+// ///////////////////////////////////////////// Experimental Line
 
-// Listens to keystrokes from the user/gameplay
+
+
 document.onkeypress = function(event){
-    var userGuess = String.fromCharCode(event.which);
-    for(var j = 0; j < word.length; j++){
-        if(word[j] === userGuess){
-            blank[j] = userGuess;
-            guessName.innerHTML = blank.join(" ");
-            console.log(blank);
-        } 
-       
+var userGuess = String.fromCharCode(event.which);
+    for(var j = 0; j < wordSelector.length; j++){
+        if(wordSelector[j] === userGuess){
+            blankSpc[j] = userGuess;
+            goodGuess.innerHTML = blankSpc.join(" ");
+            console.log(blankSpc);
+        }
     }
-
 }
+
+
+
+
+
+
 
 
 
